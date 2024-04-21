@@ -2,28 +2,26 @@ import {
   Parallax,
   Services,
   Hero,
-  Navbar
+  Navbar,
+  Portfolio,
+  Contacts,
+  Cursor,
 } from "./components/";
+import './app.scss';
 
 const App = () => {
   return (
-    <div>
+    <div className="custon-cursor">
+      <Cursor />
       <section id="homepage">
         <Navbar />
         <Hero />
       </section>
-      <section id='services'>
-        <Parallax type='services' />
-      </section>
-      <section>
-        <Services />
-      </section>
-      <section id='portfolio'>
-        <Parallax type='portfolio' />
-      </section>
-      <section>Portfolio 2</section>
-      <section>Portfolio 3</section>
-      <section id="Contacts">Contacts</section>
+      <Parallax type='services' />
+      <Services />
+      <Parallax type='portfolio' />
+      <Portfolio />
+      <Contacts />
     </div>
   );
 };

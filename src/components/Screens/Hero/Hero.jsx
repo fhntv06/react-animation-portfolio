@@ -26,10 +26,10 @@ const variantsText = {
 
 const variantsSlider = {
   initial: {
-    x: 0,
+    x: '15%',
   },
   animate: {
-    x: '220%',
+    x: '-80%',
     transition: {
       repeat: Infinity,
       repeatType: 'mirror',
@@ -57,14 +57,14 @@ const Hero = () => {
           <motion.img variants={variantsText} animate='scrollButton' src="/scroll.png" alt="" />
         </motion.div>
       </div>
-      <div
+      <motion.div
         className="slidingTextContainer"
         variants={variantsSlider}
         initial='initial'
         animate='animate'
       >
         Writer Content Creator Influence
-      </div>
+      </motion.div>
       <div className="imageContainer">
         <img src="./hero.png" alt="hero" />
       </div>

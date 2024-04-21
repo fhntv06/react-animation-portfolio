@@ -1,3 +1,5 @@
+@use './fonts/fonts.scss';
+
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -11,9 +13,20 @@ html {
 body {
   background-color: #0c0c1d;
   color: lightgray;
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
 }
 
 section {
   height: 100vh;
   scroll-snap-align: center;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.custon-cursor {
+  cursor: url('./cursor.svg'), auto;
 }

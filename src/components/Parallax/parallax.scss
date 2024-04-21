@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
   overflow: hidden;
 
   h1 {
@@ -21,15 +20,15 @@
   }
   .mountains {
     z-index: 3;
-    background-image: '/mountains.png';
+    background-image: url('/mountains.png');
     background-position: bottom;
   }
   .planets {
     z-index: 2;
-    background-image: '/planets.png';
+    background-image: url('/planets.png');
   }
   .stars {
     z-index: 2;
-    background-image: '/stars.png';
+    background-image: url('/stars.png');
   }
 }

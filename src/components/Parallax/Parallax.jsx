@@ -34,7 +34,7 @@ const Parallax = ({ type }) => {
   );
 
   return (
-    <div ref={ref} className='parallax' style={{ background: settings[type].background }}>
+    <section ref={ref} className='parallax' style={{ background: settings[type].background }}>
       <motion.h1 style={{ y: yText }}>{ settings[type].title }</motion.h1>
       <motion.div className="mountains"></motion.div>
       <motion.div
@@ -45,7 +45,7 @@ const Parallax = ({ type }) => {
         }}  
       ></motion.div>
       <motion.div className="stars"></motion.div>
-    </div>
+    </section>
   )
 }
 

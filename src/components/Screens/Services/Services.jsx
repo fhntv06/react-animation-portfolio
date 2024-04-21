@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import './services.scss';
 
 const Services = () => {
   const ref = useRef(null);
@@ -25,7 +26,7 @@ const Services = () => {
   }
 
   return (
-    <motion.div
+    <motion.section
       ref={ref}
       className='services'
       variants={variants}
@@ -50,21 +51,25 @@ const Services = () => {
         <div className="box" whileHover={{ background: 'lightgray', color: 'black' }}>
           <h2>Branding</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis dolorum quaerat nobis saepe assumenda cupiditate natus inventore veritatis nihil! Dolorem iste perferendis consectetur in. Id at assumenda aliquam possimus.</p>
+          <button>More</button>
         </div>
         <div className="box" whileHover={{ background: 'lightgray', color: 'black' }}>
           <h2>Branding</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis dolorum quaerat nobis saepe assumenda cupiditate natus inventore veritatis nihil! Dolorem iste perferendis consectetur in. Id at assumenda aliquam possimus.</p>
+          <button>More</button>
         </div>
         <div className="box" whileHover={{ background: 'lightgray', color: 'black' }}>
           <h2>Branding</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis dolorum quaerat nobis saepe assumenda cupiditate natus inventore veritatis nihil! Dolorem iste perferendis consectetur in. Id at assumenda aliquam possimus.</p>
+          <button>More</button>
         </div>
         <div className="box" whileHover={{ background: 'lightgray', color: 'black' }}>
           <h2>Branding</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis dolorum quaerat nobis saepe assumenda cupiditate natus inventore veritatis nihil! Dolorem iste perferendis consectetur in. Id at assumenda aliquam possimus.</p>
+          <button>More</button>
         </div>
       </motion.div>
-    </motion.div>
+    </motion.section>
   )
 }
 
