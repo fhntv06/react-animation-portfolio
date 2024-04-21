@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import 'sidebar.scss'; 
+import { motion } from 'framer-motion';
+import './sidebar.scss'; 
 
 const variantsBg = {
   open: {
@@ -23,31 +24,57 @@ const variantsBg = {
 }
 
 const variantsLinks = {
-  
+  open: {
+    transition: {
+      staggeredChildren: .1,
+    }
+  },
+  closed: {
+    transition: {
+      staggeredChildren: .05,
+      staggeredDirection: -1,
+    }
+  }
 }
+
+const variantsLink = {
+  open: {
+    y: 0,
+    opacity: 1,
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+  }
+}
+
+const links = [
+  'Homepage',
+  'Sevices',
+  'Portfolio',
+  'Contact',
+  'About',
+];
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
 
-
-
-  const links = [
-    'Homepage',
-    'Sevices',
-    'Portfolio',
-    'Contact',
-    'About',
-    ''
-  ];
-
   return (
     <motion.div className="sidebar" animate={open ? 'open ': 'close'}>
       <motion.div className='bg' variants={variantsBg}>
-        <div className='links'>
-          {links.map((link) => (
-            <a key={link} href={`${link}`}>{link}</a>
-          ))}
-        </div>
+        <motion.div className='links' variants={variantsLinks}>
+            {links.map((link) => (
+              <a
+                key={link}
+                href={`${link}`}
+                variants={variantsLink}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: .95 }}
+              >
+                {link}
+              </a>
+            ))}
+        </motion.div>
       </motion.div>
       <button onClick={() => setOpen(true)}>
         <svg width="23" height='23' viewBox='0 0 23 23'>

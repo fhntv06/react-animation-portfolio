@@ -1,11 +1,26 @@
+import {
+  Parallax,
+  Services,
+  Hero,
+  Navbar
+} from "./components/";
+
 const App = () => {
   return (
     <div>
-      <section id="Homepage">Hero</section>
-      <section >Parallax</section>
-      <section id="Services">Services</section>
-      <section id="">Parallax</section>
-      <section id="Portfolio">Portfolio</section>
+      <section id="homepage">
+        <Navbar />
+        <Hero />
+      </section>
+      <section id='services'>
+        <Parallax type='services' />
+      </section>
+      <section>
+        <Services />
+      </section>
+      <section id='portfolio'>
+        <Parallax type='portfolio' />
+      </section>
       <section>Portfolio 2</section>
       <section>Portfolio 3</section>
       <section id="Contacts">Contacts</section>
