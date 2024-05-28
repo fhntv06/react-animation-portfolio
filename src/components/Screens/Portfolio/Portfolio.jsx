@@ -1,6 +1,7 @@
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import './portfolio.scss';
 import { useRef } from 'react';
+import { Button } from '../../index';
 
 const Portfolio = () => {
   const items = [
@@ -37,7 +38,7 @@ const Portfolio = () => {
             <motion.div className="textContainer" style={{ y }}>
               <h2>{title}</h2>
               <p>{description}</p>
-              <button>See Demo</button>
+              <Button small orange round>See Demo</Button>
             </motion.div>
           </div>
         </div>

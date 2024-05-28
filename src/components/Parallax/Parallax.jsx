@@ -25,17 +25,22 @@ const Parallax = ({ type }) => {
   const yText = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, '100%']
+    ['0%', '150%']
   );
   const yPlanets = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, '100%']
+    ['0%', '20%']
+  );
+  const xStars = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ['0%', '10%']
   );
 
   return (
     <section ref={ref} className='parallax' style={{ background: settings[type].background }}>
-      <motion.h1 style={{ y: yText }}>{ settings[type].title }</motion.h1>
+      <motion.p className='parallax__title text-white text-bold-sm' style={{ y: yText }}>{ settings[type].title }</motion.p>
       <motion.div className="mountains"></motion.div>
       <motion.div
         className="planets"
@@ -44,7 +49,7 @@ const Parallax = ({ type }) => {
           backgroundImage: `url(${ settings[type].planetsBg})`
         }}  
       ></motion.div>
-      <motion.div className="stars"></motion.div>
+      <motion.div className="stars" style={{ x: xStars, y: xStars }}></motion.div>
     </section>
   )
 }

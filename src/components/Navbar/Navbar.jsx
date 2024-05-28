@@ -11,6 +11,7 @@ const Navbar = () => {
     <div className='navbar'>
       <div className='wrapper'>
         <motion.span
+          className='text-bold-md'
           initial='initial'
           animate='animate'
           variants={variants}

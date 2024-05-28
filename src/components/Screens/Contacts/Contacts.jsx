@@ -1,5 +1,6 @@
 import { useRef } from 'react';
-import { delay, motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import Form from '../../Form/Form';
 import './contacts.scss';
 
 const variants = {
@@ -18,26 +19,38 @@ const variants = {
   }
 }
 
+const contactData = [
+  {
+    id: 0,
+    title: 'Mail',
+    content: 'hello@react.com'
+  },
+  {
+    id: 1,
+    title: 'Address',
+    content: 'New York, 12 street'
+  },
+  {
+    id: 2,
+    title: 'Phone',
+    content: '+1 908 9543'
+  }
+]
+
 const Contacts = () => {
   const ref = useRef();
   const isInView = useInView(ref, { });
 
   return (
-    <motion.section className='contacts' variantfs={variants} initial='initial' whileInView='animate' ref={ref}>
+    <motion.section className='contacts' variants={variants} initial='initial' whileInView='animate' ref={ref}>
       <motion.div className="textContainer" variants={variants}>
         <motion.h1 variants={variants}>Let's work together</motion.h1>
-        <motion.div className="item" variants={variants}>
-          <h2>Mail</h2>
-          <span>hello@react.com</span>
-        </motion.div>
-        <motion.div className="item">
-          <h2>Address</h2>
-          <span>New York, 12 street</span>
-        </motion.div>
-        <motion.div className="item">
-          <h2>Phone</h2>
-          <span>+1 908 9543</span>
-        </motion.div>
+        {contactData.map((item) => (
+          <motion.div key={item.id} className="item" variants={variants}>
+            <h2>{item.title}</h2>
+            <span>{item.content}</span>
+          </motion.div>
+        ))}
       </motion.div>
       <div className='formContainer'>
         <motion.div className="phoneSvg" initial={{ opacity: 1 }} whileInView={{ opacity: 0 }} transition={{ duration: 1, delay: 3 }}>
@@ -65,12 +78,7 @@ const Contacts = () => {
             />
           </svg>
         </motion.div>
-        <motion.form initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 4, duration: 1 }}>
-          <input name='name' type="text" required placeholder='Name'/>
-          <input name='email' type="email" required placeholder='Email'/>
-          <textarea name='message' cols="30" rows="10" placeholder='Message' />
-          <button type='submit'>Submit</button>
-        </motion.form>
+        <Form />
       </div>
     </motion.section>
   )

@@ -1,6 +1,30 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import './services.scss';
+import Button from '../../Button/Button';
+
+const listContainerData = [
+  {
+    id: 0,
+    title: 'Branding 1',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis dolorum quaerat nobis saepe assumenda cupiditate natus inventore veritatis nihil! Dolorem iste perferendis consectetur in. Id at assumenda aliquam possimus.'
+  },
+  {
+    id: 1,
+    title: 'Branding 2',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis dolorum quaerat nobis saepe assumenda cupiditate natus inventore veritatis nihil! Dolorem iste perferendis consectetur in. Id at assumenda aliquam possimus.'
+  },
+  {
+    id: 2,
+    title: 'Branding 3',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis dolorum quaerat nobis saepe assumenda cupiditate natus inventore veritatis nihil! Dolorem iste perferendis consectetur in. Id at assumenda aliquam possimus.'
+  },
+  {
+    id: 3,
+    title: 'Branding 4',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis dolorum quaerat nobis saepe assumenda cupiditate natus inventore veritatis nihil! Dolorem iste perferendis consectetur in. Id at assumenda aliquam possimus.'
+  },
+]
 
 const Services = () => {
   const ref = useRef(null);
@@ -39,35 +63,22 @@ const Services = () => {
       </motion.div>
       <motion.div className="titleContainer" variants={variants}>
         <div className="title">
-          <img src="/people.webp" alt="" />
-          <h1><motion.b whileHover={{ color: 'orange', fontStyle: 'italic' }}>Unique</motion.b> Ideas</h1>
+          <img src="/people.webp" alt="people" title />
+          <p><span className="hover-effect text-bold-lg">Unique</span> Ideas</p>
         </div>
         <div className="title">
-          <h1><motion.b whileHover={{ color: 'orange', fontStyle: 'italic' }}>For Your</motion.b> Business</h1>
-          <button>WHAT WE DO?</button>
+          <p><span className="hover-effect text-bold-lg">For Your</span> Business</p>
+          <Button orange>WHAT WE DO?</Button>
         </div>
       </motion.div>
       <motion.div className="listContainer" variants={variants}>
-        <div className="box" whileHover={{ background: 'lightgray', color: 'black' }}>
-          <h2>Branding</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis dolorum quaerat nobis saepe assumenda cupiditate natus inventore veritatis nihil! Dolorem iste perferendis consectetur in. Id at assumenda aliquam possimus.</p>
-          <button>More</button>
-        </div>
-        <div className="box" whileHover={{ background: 'lightgray', color: 'black' }}>
-          <h2>Branding</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis dolorum quaerat nobis saepe assumenda cupiditate natus inventore veritatis nihil! Dolorem iste perferendis consectetur in. Id at assumenda aliquam possimus.</p>
-          <button>More</button>
-        </div>
-        <div className="box" whileHover={{ background: 'lightgray', color: 'black' }}>
-          <h2>Branding</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis dolorum quaerat nobis saepe assumenda cupiditate natus inventore veritatis nihil! Dolorem iste perferendis consectetur in. Id at assumenda aliquam possimus.</p>
-          <button>More</button>
-        </div>
-        <div className="box" whileHover={{ background: 'lightgray', color: 'black' }}>
-          <h2>Branding</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis corporis dolorum quaerat nobis saepe assumenda cupiditate natus inventore veritatis nihil! Dolorem iste perferendis consectetur in. Id at assumenda aliquam possimus.</p>
-          <button>More</button>
-        </div>
+        {listContainerData.map((item) => (
+          <motion.div key={item.id} className="box">
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+            <Button orange small>More</Button>
+          </motion.div>
+        ))}
       </motion.div>
     </motion.section>
   )

@@ -1,3 +1,5 @@
+@import '../../../common/colors.scss';
+
 .services {
   display: flex;
   flex-direction: column;
@@ -12,16 +14,12 @@
     gap: 20px;
     
     p {
-      font-weight: 200;
-      font-size: 20px;
-      color: gray;
       text-align: right;
     }
-
     hr {
       width: 500px;
       border: none;
-      border-top: .5px solid gray;
+      border-top: .5px solid $gray;
     }
   }
 
@@ -31,33 +29,34 @@
     flex-direction: column;
     align-items: center;
 
-     .title {
+    .title {
       display: flex;
       align-items: center;
       gap: 50px;
 
-      h1 {
+      p {
         font-size: 96px;
-        font-weight: 100;
+        transition: color .3s ease-in-out;
       }
-
-      button {
-        width: 300px;
-        height: 100px;
-        border-radius: 50px;
-        background: orange;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
+    }
+    button {
+      font-size: 24px;
+    }
+    img {
+      object-fit: cover;
+      border-radius: 50px;
+    }
+    img,
+    button {
+      width: 300px;
+      height: 100px;
+    }
+     .hover-effect {
+      &:hover {
+        color: orange;
+        font-style: italic;
       }
-
-      img {
-        width: 300px;
-        height: 100px;
-        border-radius: 50px;
-        object-fit: cover;
-      }
-     }
+    }
   }
 
   .listContainer {
@@ -70,14 +69,15 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 20px;
       padding: 50px;
-      border: .5px solid gray;
-      
-      button {
-        padding: 10px;
-        background: orange;
-        border: none;
-        cursor: pointer;
+      border: .5px solid $gray;
+      transition: background-color .3s ease-in;
+
+      &:hover {
+        background-color: $white;
+        color: $black;
+        transition: background-color .5s ease-out;
       }
     }
   }

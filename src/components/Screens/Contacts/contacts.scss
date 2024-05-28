@@ -7,6 +7,8 @@
   margin: auto;
 
   .textContainer {
+    display: flex;
+    flex-direction: column;
     gap: 40px;
 
     h1 {
@@ -22,38 +24,16 @@
   .textContainer,
   .formContainer {
     flex: 1;
-    display: flex;
-    flex-direction: column;
   }
 
   .formContainer {
-    gap: 20px;
+    position: relative;
 
     .phoneSvg {
       position: absolute;
       margin: auto;
       stroke: orange;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      row-gap: 20px;
-    }
-
-    input,
-    textarea {
-      padding: 20px;
-      background-color: transparent;
-      border: 1px solid white;
-      color: white;
-      font-weight: 500;
-      border-radius: 5px;
-    }
-
-    button {
-      background-color: orange;
-      padding: 20px;
+      pointer-events: none;
     }
   }
 }

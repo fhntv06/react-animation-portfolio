@@ -1,3 +1,4 @@
+import { Button } from '../../index';
 import { motion } from 'framer-motion';
 import './hero.scss';
 
@@ -48,17 +49,21 @@ const Hero = () => {
           initial='initial'
           animate='animate'
         >
-          <motion.h2 variants={variantsText}>Artem Kuskov</motion.h2>
+          <motion.h4 variants={variantsText}>Artem Kuskov</motion.h4>
           <motion.h1 variants={variantsText}>Wed developer and UI designer</motion.h1>
           <motion.div variants={variantsText} className="buttons">
-            <motion.button variants={variantsText}>See the Last Works</motion.button>
-            <motion.button variants={variantsText}>Contact Me</motion.button>
+            <motion.span variants={variantsText}>
+              <Button round>See the Last Works</Button>
+            </motion.span>
+            <motion.span variants={variantsText}>
+              <Button white round>Contact Me</Button>
+            </motion.span>
           </motion.div>
           <motion.img variants={variantsText} animate='scrollButton' src="/scroll.png" alt="" />
         </motion.div>
       </div>
       <motion.div
-        className="slidingTextContainer"
+        className="slidingTextContainer text-bold"
         variants={variantsSlider}
         initial='initial'
         animate='animate'

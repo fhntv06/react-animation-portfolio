@@ -1,19 +1,49 @@
+@import '../../common/colors.scss';
+
 .sidebar {
   z-index: 100;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  color: black;
+  background-color: $white;
 
+  &.open {
+    a {
+      transform: translateY(0);
+      opacity: 1;
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          transition:
+            transform #{.3 * $i / 2}s .3s ease-out,
+            opacity #{.3 * $i / 3}s .3s ease-out;
+        }
+      }
+    }
+  }
+
+  a {
+    color: $black;
+    opacity: 0;
+    transform: translateY(50px);
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        transition:
+          transform #{.3 * (10 - $i) / 4}s ease-out,
+          opacity #{.3 * (10 - $i) / 3}s ease-out;
+      }
+    }
+  }
   .bg {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     width: 400px;
-    background-color: white;
+    background-color: $white;
 
     .links {
       position: absolute;
@@ -24,6 +54,14 @@
       justify-content: center;
       row-gap: 20px;
 
+      a {
+        &:hover {
+          transform: scale(1.1);
+        }
+        &:active {
+          transform: scale(.95);
+        }
+      }
     }
   }
 
@@ -35,7 +73,5 @@
     height: 50px;
     background-color: transparent;
     border-radius: 50%;
-    border: none;
-    cursor: pointer;
   }
 }

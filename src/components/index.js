@@ -6,4 +6,6 @@ export { default as Services }  from "./Screens/Services/Services";
 export { default as Portfolio }  from "./Screens/Portfolio/Portfolio";
 export { default as Contacts }  from "./Screens/Contacts/Contacts";
 export { default as Cursor }  from "./Cursor/Cursor";
+export { default as Button }  from "./Button/Button";
+export { default as Input }  from "./Input/Input";
 

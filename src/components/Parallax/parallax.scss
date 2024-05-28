@@ -6,10 +6,10 @@
   width: 100%;
   overflow: hidden;
 
-  h1 {
+  .parallax__title {
+    z-index: 3;
     font-size: 100px;
   }
-
   .mountains,
   .planets,
   .stars {
@@ -19,16 +19,15 @@
     background-size: cover;
   }
   .mountains {
-    z-index: 3;
+    z-index: 4;
     background-image: url('/mountains.png');
     background-position: bottom;
   }
-  .planets {
-    z-index: 2;
-    background-image: url('/planets.png');
+  .stars {
+    background-image: url('/stars.png');
   }
+  .planets,
   .stars {
     z-index: 2;
-    background-image: url('/stars.png');
   }
 }

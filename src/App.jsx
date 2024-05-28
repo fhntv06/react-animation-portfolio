@@ -1,18 +1,21 @@
 import {
+  Sidebar,
   Parallax,
   Services,
   Hero,
   Navbar,
   Portfolio,
   Contacts,
-  Cursor,
-} from "./components/";
+  Cursor
+} from './components/index';
 import './app.scss';
 
 const App = () => {
   return (
-    <div className="custon-cursor">
+    // <div className="custom-cursor">
+    <>
       <Cursor />
+        <Sidebar />
       <section id="homepage">
         <Navbar />
         <Hero />
@@ -22,7 +25,8 @@ const App = () => {
       <Parallax type='portfolio' />
       <Portfolio />
       <Contacts />
-    </div>
+      {/* </div> */}
+    </>
   );
 };
 

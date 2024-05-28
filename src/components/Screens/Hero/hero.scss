@@ -1,3 +1,5 @@
+@import '../../../common/colors.scss';
+
 .hero {
   position: relative;
   height: calc(100vh - 100px);
@@ -18,22 +20,10 @@
     justify-content: center;
     gap: 20px;
 
-    .buttons {
-      padding: 20px;
-      border: 1px solid white;
-      border-radius: 10px;
-      background-color: transparent;
-      color: white;
+    button:first-child {
       margin-right: 20px;
-      cursor: pointer;
-      font-weight: 300;     
     }
-
-    h1 {
-      font-size: 88px;
-    }
-    h2 {
-      font-size: 30px;
+    h4 {
       color: rebeccapurple;
       letter-spacing: 10px;
     }
@@ -41,12 +31,15 @@
       width: 50px;
     }
   }
-
   .imageContainer {
     position: absolute;
     top: 0;
-    left: 0;
-    height: 100%;
+    left: 45%;
+    width: 80%;
+    
+    img {
+      width: 100%;
+    }
   }
   .slidingTextContainer {
     position: absolute;
@@ -55,6 +48,6 @@
     white-space: nowrap;
     color: #ffffff09;
     width: max-content;
-    font-weight: bold;
+    pointer-events: none;
   }
 }
